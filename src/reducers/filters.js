@@ -1,16 +1,16 @@
-
 import moment from 'moment';
 
-// filters reducer
+// Filters Reducer
+
 const filtersReducerDefaultState = {
   text: '',
   sortBy: 'date',
   startDate: moment().startOf('month'),
   endDate: moment().endOf('month')
 };
-const filtersReducer = 
-(state = filtersReducerDefaultState, action) => {
-  switch(action.type){
+
+export default (state = filtersReducerDefaultState, action) => {
+  switch (action.type) {
     case 'SET_TEXT_FILTER':
       return {
         ...state,
@@ -40,5 +40,3 @@ const filtersReducer =
       return state;
   }
 };
-
-export default filtersReducer;

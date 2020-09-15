@@ -1,41 +1,45 @@
-
-// Destructuring (ES6) : const {..} = object
-// renaming and default: "...:..." "..='..'" 
+//
+// Object destructuring
+//
 
 // const person = {
-//   name: 'tom',
-//   age: 26,
+//   name: 'Andrew',
+//   age: 27,
 //   location: {
-//     city: 'Edinburgh',
-//     temp: 12
+//     city: 'Philadelphia',
+//     temp: 88
 //   }
 // };
 
-// const { name: FirstName = 'Anonymous', age} = person;
-// console.log(`This is ${FirstName} and I am ${age}.`);
+// const { name: firstName = 'Anonymous', age } = person;
+// console.log(`${firstName} is ${age}.`);
 
-// const {temp, city} = person.location;
-// console.log(`It's ${temp} in ${city}.`);
+// const { city, temp: temperature } = person.location;
+// if (city && temperature) {
+//   console.log(`It's ${temperature} in ${city}.`);
+// }
 
-// const book ={
-//   title: 'Ego is the enemy',
+// const book = {
+//   title: 'Ego is the Enemy',
 //   author: 'Ryan Holiday',
 //   publisher: {
-//     name: 'Penguin'
+//     // name: 'Penguin'
 //   }
 // };
 
-// const {title, author} = book;
-// const {name: publisherName = 'Self-Pubished'} = book.publisher;
-// console.log(`${author}'s book entitled ${title} was published by ${publisherName}.`)
+// const { name: publisherName = 'Self-Published' } = book.publisher;
 
+// console.log(publisherName); // Penguin, Self-Published
 
-// ARRAY DESTRUCTURING
+//
+// Array destructuring
+//
 
-const address = ['123 street', 'Edinburgh', 'Midlothian', 'EH12'];
-const [street, city, , postcode] = address;
-console.log(`You are at ${street}, ${city}, ${postcode}.`);
+// const address = ['1299 S Juniper Street', 'Philadelphia', 'Pennsylvania', '19147'];
+// const [, city, state = 'New York'] = address;
+// console.log(`You are in ${city} ${state}.`);
 
-const item = ['hot coffee', '£2.00', '£2.50', '£2.80'];
-const [hotCoffee, , medium,] = item;
-console.log(`A medium ${hotCoffee} costs ${medium}.`);
+const item = ['Coffee (iced)', '$3.00', '$3.50', '$3.75'];
+const [itemName, , mediumPrice] = item;
+
+console.log(`A medium ${itemName} costs ${mediumPrice}`);
